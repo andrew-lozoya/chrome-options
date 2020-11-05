@@ -1,6 +1,6 @@
 ![example](images/newrelic_options_example.png)
 
-Screenshot is from extension [veefeed](https://github.com/alozoya/chrome-browser-injector)
+Screenshot is from extension [newrelic-chrome-browser-injector](https://github.com/alozoya/newrelic-chrome-browser-injector)
 
 Here's a [demo](https://fent.github.io/chrome-options/).
 
