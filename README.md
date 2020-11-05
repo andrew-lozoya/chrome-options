@@ -1,4 +1,4 @@
-![example](images/options_example.png)
+![example](images/newrelic_options_example.png)
 
 Screenshot is from extension [veefeed](https://github.com/alozoya/chrome-browser-injector)
 
