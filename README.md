@@ -1,13 +1,10 @@
-Option pages should be simple to create given a structure of your options, ~and look like Chrome's options~.
-
 ![example](images/example.png)
 
-Screenshot is from extension [veefeed](https://github.com/fent/chrome-veefeed)
+Screenshot is from extension [veefeed](https://github.com/alozoya/chrome-browser-injector)
 
 Here's a [demo](https://fent.github.io/chrome-options/).
 
 This library uses [chrome-bootstrap](https://github.com/better-history/chrome-bootstrap) for styling.
-
 
 # Install
 
@@ -15,7 +12,6 @@ Recommended that you create an options folder in your extension, keep things org
 
     mkdir options
     cd options
-
 
 Download chrome-options
 
@@ -73,7 +69,6 @@ Options can all have the following properties,
 * `boolean` - `singleline` - If you'd like to position the label and the field on the same line, instead of the default multiline layout.
 * `Function` - `validate` - Called with the new value of field, will only save if it returns `true`.
 
-
 # Fields Types Available
 
 ### checkbox
@@ -83,18 +78,6 @@ Options can all have the following properties,
 ### text
 
 ![text](images/field_text.png)
-
-### color
-
-![color](images/field_color.png)
-
-* `string` - `format` - Can be `hex`, `rgb`, `rgba`, `hsl`, or `hsla.`.
-
-If `default` is set, will have an additional button for resetting to that color.
-
-![color](images/field_color_2.png)
-
-Uses [this color picker library](https://github.com/tovic/color-picker).
 
 ### select
 
@@ -107,17 +90,6 @@ Uses [this color picker library](https://github.com/tovic/color-picker).
 ![select](images/field_radio.png)
 
 * `Array.<Object|string>` - `options` - List of options for this field. If a list of objects, each option must have `value` and `desc` properties.
-
-### predefined_sound
-
-![predefined_sound](images/field_predefined_sound.png)
-
-* `boolean` - `allowNoSound` - Adds a no sound option to the top of the select field.
-
-### custom_sound
-
-![custom_sound](images/field_custom_sound.png)
-
 
 # Complex Field Types
 
@@ -241,7 +213,6 @@ Try it in the demo:
 
 - <https://fent.github.io/chrome-options/?hideSidebar&hideTabTitle#general.profile>
 - <https://fent.github.io/chrome-options/?hideSidebar&hideTabTitle#general.profile.party>
-
 
 # Roadmap
 
