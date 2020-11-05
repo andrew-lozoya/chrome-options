@@ -3,9 +3,6 @@
 import h from './hyperscript.js';
 import { debounce } from './util.js';
 
-import './color-picker.js';
-import './predefined-sound.js';
-
 chrome.options.fields.checkbox = (value, save) => {
   const $checkbox = h('input[type=checkbox]');
 
@@ -84,32 +81,6 @@ chrome.options.fields.radio = (value, save, option) => {
 
     $row.append(h('label', { for: id }, desc));
   });
-
-  return $container;
-};
-
-chrome.options.fields.custom_sound = (value, save) => {
-  const $container = h('span.custom-sound');
-
-  const saveField = (newValue, e) => {
-    value = newValue;
-    save(newValue, e);
-  };
-
-  const playSound = () => {
-    const audio = new Audio();
-    audio.src = value;
-    audio.play();
-  };
-
-  const $field = chrome.options.addField(value, saveField, { type: 'url' });
-  $field.addEventListener('keypress', (e) => {
-    if (e.keyCode === 13) {
-      playSound();
-    }
-  });
-  $container.append($field);
-  $container.append(h('span.play', { onclick: playSound, innerHTML: '&#9654;' }));
 
   return $container;
 };

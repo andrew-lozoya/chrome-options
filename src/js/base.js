@@ -81,7 +81,7 @@ chrome.options.addOption = (key, value, save, option) => {
     // `key` is passed down from parent options to be used here.
     const $label = $option.querySelector('label');
     $label.append(h('span.preview-container', h('span.preview')),
-      h('img.preview-image', { src: 'previews/' + key + '.' + option.preview }));
+      h('img.preview-image', { src: 'previews/' + key + '_' + option.preview }));
   }
 
   return $option;
@@ -193,7 +193,7 @@ chrome.options.base.object = (value, save, option, key) => {
 
 const getKeyPath = (parentKey, option) => {
   return (parentKey || '') +
-    (parentKey && option.name ? '.' : '') + (option.name || '');
+    (parentKey && option.name ? '_' : '') + (option.name || '');
 };
 
 const addOptions = (values, save, option, key) => {

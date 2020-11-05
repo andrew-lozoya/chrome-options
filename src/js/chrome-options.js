@@ -6,17 +6,16 @@ import h from './hyperscript.js';
 import * as dom from './dom.js';
 import * as util from './util.js';
 
-
 // Expose this library.
 chrome.options.opts = {
   // If not given, title of the page will be set to the extension's name.
   // Set to `false` if you want to hide the title.
   title: null,
 
-  // Set this if you want to customize the about tab's contents,
+  // Set this if you want to customize the license tab's contents,
   // otherwise it will be set to the extension's description.
-  // Set to `false` if you don't want an About page.
-  about: null,
+  // Set to `false` if you don't want an license page.
+  license: null,
 
   // True if you want settings to be saved as they are changed.
   autoSave: true,
@@ -84,7 +83,7 @@ let setupRan = false;
 const setup = () => {
   if (setupRan) { return; }
   const manifest = chrome.runtime.getManifest();
-
+/*
   const extensionName =
     chrome.options.opts.title || manifest.name || 'chrome';
   document.querySelector('title').textContent =
@@ -94,16 +93,17 @@ const setup = () => {
   if (chrome.options.opts.title !== false && !urlParams.hideTitle) {
     document.body.classList.add('show-title');
   }
+  */
 
-  if (chrome.options.opts.about !== false &&
-     (chrome.options.opts.about || manifest.description) &&
-      !urlParams.hideAbout) {
-    document.body.classList.add('show-about');
-    let $about = document.querySelector('#about .content > p');
-    if (chrome.options.opts.about) {
-      $about.innerHTML = chrome.options.opts.about;
+  if (chrome.options.opts.license !== false &&
+     (chrome.options.opts.license || manifest.description) &&
+      !urlParams.hideLicense) {
+    document.body.classList.add('show-license');
+    let $license = document.querySelector('#license .content > p');
+    if (chrome.options.opts.license) {
+      $license.innerHTML = chrome.options.opts.license;
     } else {
-      $about.textContent = manifest.description;
+      $license.textContent = manifest.description;
     }
   }
 
@@ -135,7 +135,7 @@ const setup = () => {
 
 const getKeyPath = (parentKey, option) => {
   return (parentKey || '') +
-    (parentKey && option.name ? '.' : '') + (option.name || '');
+    (parentKey && option.name ? '_' : '') + (option.name || '');
 };
 
 /**

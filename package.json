@@ -28,7 +28,6 @@
     "node_modules"
   ],
   "devDependencies": {
-    "c-p": "github:tovic/color-picker",
     "chrome-bootstrap": "^1.5.0",
     "css-loader": "^1.0.0",
     "dragula": "^3.7.2",
