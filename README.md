@@ -1,4 +1,4 @@
-![example](images/newrelic_options_example.png)
+![example](images/onenewrelic_options_example.png)
 
 Screenshot is from extension [newrelic-chrome-browser-injector](https://github.com/alozoya/newrelic-chrome-browser-injector)
 
